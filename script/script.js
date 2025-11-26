@@ -18,3 +18,17 @@ const video = document.querySelector('.video-div video');
 function toggleMenu() {
   document.querySelector('.navigation').classList.toggle('show');
 }
+
+
+const pCount = document.querySelectorAll("p").length;
+console.log("Кількість <p>:", pCount);
+
+const h2Count = document.querySelectorAll("h2").length;
+console.log("Кількість <h2>:", h2Count);
+
+const bodyBg = getComputedStyle(document.body).backgroundColor;
+console.log("background-color body:", bodyBg);
+
+const h1 = document.querySelector("h1");
+const h1FontSize = getComputedStyle(h1).fontSize;
+console.log("font-size h1:", h1FontSize);
