@@ -32,3 +32,19 @@ console.log("background-color body:", bodyBg);
 const h1 = document.querySelector("h1");
 const h1FontSize = getComputedStyle(h1).fontSize;
 console.log("font-size h1:", h1FontSize);
+
+
+const allElements = document.querySelectorAll("*");
+
+allElements.forEach(el => {
+    let prevColor = "";
+
+    el.addEventListener("mouseenter", () => {
+        prevColor = getComputedStyle(el).backgroundColor; 
+        el.style.backgroundColor = "red";
+    });
+
+    el.addEventListener("mouseleave", () => {
+        el.style.backgroundColor = prevColor;
+    });
+});
