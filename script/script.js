@@ -48,3 +48,36 @@ allElements.forEach(el => {
         el.style.backgroundColor = prevColor;
     });
 });
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(addImages, 5000);
+
+    function addImages() {
+        let imagesUrl = [
+            "img/img-rust.jpg",
+            "img/apr.jpg",
+            "img/twitch-bg.jpg",
+            "img/rustplusimage2.png"
+        ];
+
+        const container = document.getElementById('fds');
+
+        const fragment = document.createDocumentFragment();
+
+        let delay = 0;
+
+        imagesUrl.forEach(url => {
+            setTimeout(() => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = "Dynamic image";
+                fragment.appendChild(img);
+
+                container.appendChild(fragment);
+            }, delay);
+
+            delay += 1000;
+        });
+    }
+});
